@@ -1,0 +1,22 @@
+{
+  "appId": "org.mesho.desktop",
+  "productName": "Mesho",
+  "electronDist": "node_modules/electron/dist",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**",
+    "dist-electron/**",
+    "assets/**",
+    "package.json"
+  ],
+  "compression": "store",
+  "win": {
+    "target": "portable",
+    "icon": "assets/icon.ico",
+    "signAndEditExecutable": false
+  },
+  "artifactName": "Mesho-${version}-${arch}.${ext}",
+  "afterPack": "scripts/after-pack.cjs"
+}
