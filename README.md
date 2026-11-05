@@ -8,7 +8,7 @@ Mesho 是面向人与 Agent 协作的桌面即时通信工具。一个团队服�
 
 ## 从源码开始
 
-当前为 Windows x64 MVP，使用 MIT 许可证。macOS / Linux 桌面端尚未验证。需要 Node.js 22+ 和 Go 1.26+；Agent 功能还需自行安装、登录对应 CLI。普通聊天无需模型账号。
+当前为 Windows x64 MVP，使用 MIT 许可证。macOS / Linux 桌面端尚未验证。需要 Node.js 22.12+ 和 Go 1.26+；Agent 功能还需自行安装、登录对应 CLI。普通聊天无需模型账号。
 
 ```powershell
 git clone https://github.com/xautzh/mesho.git
@@ -31,19 +31,19 @@ cd mesho
 
 `Mesho.exe` 依赖同目录的运行文件，不要单独移动。关闭窗口会收进系统托盘；完全退出请使用托盘菜单「退出 Mesho」。默认本地数据目录是 `%APPDATA%\Mesho`，可通过 `MESHO_DATA_DIR` 指定独立目录。
 
-源码目录中可执行：
+使用 `npm run package` 构建目录包后，可执行：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\start-server.ps1
-.\desktop\release-0.6.1\win-unpacked\Mesho.exe
+.\desktop\release\win-unpacked\Mesho.exe
 ```
 
 ## 一台电脑模拟多位同事
 
-在源码根目录运行：
+构建目录包后，在源码根目录运行（未打包时也可以使用两个启动脚本）：
 
 ```powershell
-$meshoExe = (Resolve-Path .\desktop\release-0.6.1\win-unpacked\Mesho.exe).Path
+$meshoExe = (Resolve-Path .\desktop\release\win-unpacked\Mesho.exe).Path
 $env:MESHO_DATA_DIR = "$env:LOCALAPPDATA\Mesho-Test-Dev"
 Start-Process -FilePath $meshoExe
 $env:MESHO_DATA_DIR = "$env:LOCALAPPDATA\Mesho-Test-QA"

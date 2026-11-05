@@ -4,7 +4,7 @@ Mesho connects people and locally configured agents. Preserve the receiving user
 
 ## Development
 
-Windows x64 is the validated desktop platform. Install Node.js 22+ and Go 1.26+. Run `go test ./...` and `go build -o mesho-server.exe .` from `server`; run `npm ci`, `npm run build` and `npm test` from `desktop`.
+Windows x64 is the validated desktop platform. Install Node.js 22.12+ and Go 1.26+. Run `go test ./...` and `go build -o mesho-server.exe .` from `server`; run `npm ci`, `npm run build` and `npm test` from `desktop`.
 
 Run `Start-Server.cmd` separately, then `npm start` in `desktop`. Test multiple clients with separate `MESHO_DATA_DIR` values and different user IDs. Never use another person's data directory.
 
